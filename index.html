@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>近视模拟器 - 在线体验近视和散光视觉效果</title>
+    <meta name="description" content="在线近视模拟器，直观体验不同度数的近视和散光视觉效果。通过调节近视度数和散光度数，实时查看视觉模糊程度的变化。">
+    <meta name="keywords" content="近视模拟,散光模拟,视力模拟,近视效果,散光效果,视觉模拟">
+    <meta name="author" content="在线近视模拟器">
+    <meta property="og:title" content="近视模拟器 - 在线体验近视和散光视觉效果">
+    <meta property="og:description" content="在线近视模拟器，直观体验不同度数的近视和散光视觉效果。通过调节近视度数和散光度数，实时查看视觉模糊程度的变化。">
+    <meta property="og:image" content="./images/favicon.png">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://pc.cheyouzheng.top?currentPage=6">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            <div class="simulator-container">
+                <div class="header">
+                    <h1>近视模拟器</h1>
+                    <p>体验不同度数的视觉效果</p>
+                </div>
+                
+                <div class="preview">
+                    <div class="preview-item original">
+                        <div class="image-container">
+                            <img id="sourceImage" 
+                                 src="./images/test.jpg" 
+                                 alt="近视模拟器测试图片 - 清晰视觉效果对比" 
+                                 title="近视模拟器原始图片"
+                                 width="3072" 
+                                 height="4096" 
+                                 loading="eager"
+                                 crossorigin="anonymous">
+                        </div>
+                    </div>
+                    <div class="preview-item simulated">
+                        <div class="canvas-container">
+                            <canvas id="outputCanvas" 
+                                    aria-label="近视和散光效果模拟画布" 
+                                    role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <div class="degree-display">近视 <span id="degreeValue">-100</span>度</div>
+                        <div class="slider-container">
+                            <input type="range" 
+                                   id="degreeSlider" 
+                                   min="-1000" 
+                                   max="0" 
+                                   step="25" 
+                                   value="-100"
+                                   class="custom-slider"
+                                   aria-label="近视度数调节滑块">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="degree-display">散光 <span id="astigmatismValue">-50</span>度</div>
+                        <div class="slider-container">
+                            <input type="range" 
+                                   id="astigmatismSlider" 
+                                   min="-500" 
+                                   max="0" 
+                                   step="25" 
+                                   value="-50"
+                                   class="custom-slider"
+                                   aria-label="散光度数调节滑块">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="myopia.js"></script>
+</body>
+</html>
